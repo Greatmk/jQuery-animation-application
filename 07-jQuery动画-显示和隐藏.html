@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 300px;
+			width: 300px;
+			background-color: hotpink;
+			display: none;
+		}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 给展示按钮绑定单击事件
+			$("button:eq(0)").click(function() {
+				// show() 方法 改变的是：高度、宽度以及不透明度
+
+				// 展示：show()
+				// 1 不传入参数，表示没有动画效果
+				// $("div").show();
+				// 2 传入数值参数，参数的单位是：毫秒
+				// 		作用：让div在1秒钟之内展示出来
+				// $("div").show(2000);
+				// 3 传入字符串参数：
+				// 	"slow": 600ms
+				// 	"normal": 400ms
+				// 	"fast": 200ms
+				// $("div").show("slow");
+				// 4 还可以传入两个参数
+				// 第一个参数表示：动画执行的时长
+				// 第二个参数表示：动画执行完后，立即执行的回调函数
+				$("div").show(1000, function() {
+					// 动画执行完之后，可以在这个回调函数中立即执行其他的操作
+					// alert("函数执行完了！");
+					$("div").hide("slow");
+				});
+			});
+
+			// 给展示按钮绑定单击事件
+			$("button:eq(1)").click(function() {
+				$("div").hide(2000, function() {
+					alert("hehe");
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>展示</button>
+	<button>隐藏</button>
+	
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.cloth {
+			background: hotpink;
+		}
+		div {
+			height: 400px;
+			width: 400px;
+			background-color: hotpink;
+		}
+
+		.cls {
+			background-color: skyblue;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 添加类
+			// .addClass() 
+			// 作用：给匹配到的元素添加类
+			// $("li").addClass("cloth");
+
+			// 移除类
+			// .removeClass()
+			// 作用：给匹配到的元素移除指定的类
+			// $("li").removeClass("cloth");
+
+			// 判断有没有类
+			// .hasClass()
+			// 作用：用来判断指定的元素中有没有类
+			// 返回：是一个布尔值，如果存在类就返回：true，否则返回：false
+			// 注意：匹配到的元素中只要有一个元素包含了指定的类，返回值就是：true
+			// var r = $("li").hasClass("red");
+			// console.log(r);
+
+			// 切换类
+			// .toggleClass()
+			// 作用：实现类的切换，如果有类，就移除；如果没有就添加
+
+			// 功能：实现场景的切换
+			// 如果有指定的类，就移除掉
+			// 如果没有指定的类，就添加
+			$("button").click(function() {
+				/*// 获取div中是否有类
+				var b = $("div").hasClass("cls");
+				if(b) {
+					// 如果有指定的类，就会指定if中的代码
+					$("div").removeClass("cls");
+				} else {
+					// 没有类，添加类即可
+					$("div").addClass("cls");
+				}*/
+
+				$("div").toggleClass("cls");
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>衬衣</li>
+		<li class="red blue">裤子</li>
+		<li id="wz">袜子</li>
+		<li>鞋子</li>
+	</ul>
+
+	<button>切换场景</button>
+	<div class="cls"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 300px;
+			width: 300px;
+			background-color: hotpink;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("button:eq(0)").click(function() {
+				// 实现 展示和隐藏的切换效果
+				// 作用：判断是展示还是隐藏的，如果是展示就隐藏，如果是隐藏就展示
+				$("div").toggle();
+			});
+
+			$("button:eq(1)").click(function() {
+				// 实现 淡入淡出切换切换效果
+				// 作用：判断是展示还是隐藏的，如果是展示就以动画效果淡淡的隐藏掉
+				// ，如果是隐藏就淡淡的展示出来
+				$("div").fadeToggle();
+			});
+
+			$("button:eq(2)").click(function() {
+				// 实现 滑入滑出切换换效果
+				// 作用：判断是展示还是隐藏的，如果是展示就以动画效果渐渐的隐藏
+				// ，如果是隐藏就渐渐的展示出来
+				$("div").slideToggle(1000, function() {
+					alert("jianjiande");
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>显示和隐藏切换</button>
+	<button>淡入淡出切换</button>
+	<button>滑入滑出切换</button>
+	
+	<div>划船不用桨，全靠浪</div>
+</body>
+</html>

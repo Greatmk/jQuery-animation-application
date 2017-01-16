@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none
+        }
+
+        img {
+            vertical-align: top
+        }
+
+        .wrapper {
+            width: 490px;
+            height: 170px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .slider {
+            width: 490px;
+            height: 170px;
+            background-color: pink;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider ul {
+            width: 1000%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider li {
+            float: left;
+        }
+
+        .slider-nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .slider-nav span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .slider-nav span.current {
+            background-color: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="../jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // 获取到图片的宽度
+        var w = parseInt( $(".slider").css("width") );
+        // console.log(w);
+
+        // 1 给所有的导航栏菜单绑定鼠标移上来的事件
+        $(".slider-nav > span").mouseenter(function() {
+            // 2 给当前元素添加类，给它的兄弟元素移除类
+            $(this).addClass("current").siblings("span").removeClass("current");
+
+            // 3 让轮播图动起来
+            // 3.1 获取到当前元素的索引号
+            var index = $(this).index();
+
+            $(".slider-main").animate({
+                left: -w * index
+            });
+        });
+    });
+</script>
+<body>
+<div class="wrapper" id="wrapper">
+    <div class="slider">
+        <ul class="slider-main">
+            <li>
+                <a href="#"><img src="images/01.jpg" alt=""/></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/02.jpg" alt=""/></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/03.jpg" alt=""/></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/04.jpg" alt=""/></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/05.jpg" alt=""/></a>
+            </li>
+        </ul>
+
+        <div class="slider-nav">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

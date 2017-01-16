@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 400px;
+			width: 300px;
+			background-color: hotpink;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 开始动画
+			$("#btnStart").click(function() {
+				$("div").slideToggle(1000);
+			});
+
+
+			// 停止动画
+			// .stop() 作用：用来停止jQuery动画
+			// 也让哪个元素停止动画，就在哪个元素的后面调用stop()方法
+			// 一般情况，stop()方法会和动画方法一起使用，这时候，一般做法是：
+			// 先调用stop()方法，在调用动画方法
+			$("#btnStop").click(function() {
+				 $('div').stop();
+				// 有两个参数：
+				// 第一个参数表示是否清空所有的后续动画
+				// 第二个参数表示是否立即执行完当前正在执行的动画
+
+				// 联想：匆匆 从前走到后
+
+				// $('div').stop(true, true);
+				// $('div').stop(true, false);
+				// $('div').stop(false, true);
+				// $('div').stop(false, false);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btnStart">开始动画</button>
+	<button id="btnStop">停止动画</button>
+	<div></div>
+</body>
+</html>

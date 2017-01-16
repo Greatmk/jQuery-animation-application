@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// .html()
+			// 作用：用来获取或者是设置html内容
+			// 没有参数表示：获取内容
+			// 有参数表示：设置内容，如果原来已经存在内容，此时，会把原来的内容覆盖
+
+			$("#btnHTML").click(function() {
+				// 设置内容
+				// 
+				$('div').html("设置html的内容");
+
+				// 获取内容
+				// var ret = $('div').html();
+				// console.log(ret);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btnHTML">html内容操作</button>
+	<div>
+		这是<span>div</span>原来的内容
+	</div>
+</body>
+</html>

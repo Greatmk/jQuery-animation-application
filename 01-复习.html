@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="height: 2000px;">
+	<h1>jQuery的核心理念: wirte less, do more !</h1>
+	<div id="dv"></div>
+	<div></div>
+	<div id="d"></div>
+	<script type="text/javascript" id="s" src="../4-源代码/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// jQuery对象 和 DOM对象
+		// 
+		// DOM对象是：通过DOM提供的获取元素的方法，得到的元素。例如：
+		// var dv = document.getElementById("dv"); 或者是
+		// var dv0 = document.getElementsByTagName("div")[0];
+		// 
+		// DOM对象的操作：
+		// dv.onclick = function() {}
+		// dv.style.color = "red";
+		// dv.innerHTML = "我是一个DOM对象";
+		// dv.getAtrribute()
+		// dv.childNodes / dv.children
+		// 
+		// 
+		// jQuery对象是：jQuery对象是包装的DOM对象的集合，即：包装集。例如：
+		// var $dv = $("#dv"); 或者是
+		// var $dvs = $("div");
+		// 
+		// 注意：无论获取到的是一个元素还是多个元素，jQuery对象都是一个集合
+		// 可以通过 jQuery对象 的 length 属性进行区分：
+		// $dv.length 为 1
+		// $dvs.length 为 3（具体的div的数量）
+		// 
+		// 如果没有匹配项，length 为 0
+		
+		// 获取id为 dv 的元素
+		var $dv = $("#dv");
+		// 获取标签为 div 的元素
+		var $dvs = $("div");
+		// 获取id为 abc 的元素
+		var $d = $("#abc");
+
+		// 通过DOM的获取id为 dv 的元素
+		var dv = document.getElementById("dv");
+		// console.log(typeof dv); // object
+		console.log(dv === $dv[0]); // 两个对象比较只有引用的是同一个对象的时候，才为true
+
+		/*console.log($d.length);
+		console.log($dv.length);
+		console.log($dvs.length);*/
+
+
+		// DOM对象转化为jQuery对象
+		// 		$( dv )，调用$函数将DOM对象作为其参数即可
+		// 		$( this )
+		// 
+		// jQuery对象转化为DOM对象
+		// 		1 $("div")[0]，从jQuery对象中取出索引号为0的DOM对象
+		// 		2 $("div").get(0)，作用与 $("div")[0] 相同
+		// 		get()方法参数可以省略，此时，会将所有的DOM对象全部取出转化一个真数组
+		// var arr = $("div").get();
+		// console.log(arr instanceof Array);
+
+
+		// 1 jQuery使用的三个步骤
+		// 		1.1 引入jQuery文件（先引入再使用）
+		// 		1.2 jQuery的入口函数
+		// 		1.3 实现功能的代码
+		// 		
+		// 2 jQuery的两种入口函数
+		// 		2.1 $(document).ready(function() {});
+		// 		2.2 $(function() {});
+		// 
+		// 3 基本选择器
+		// 		#id / .class / element / * / div, .red / div.red
+		// 
+		// 4 层级选择器
+		// 		> / 空格
+		// 		.children() / .find(选择器)
+		// 
+		// 5 过滤选择器
+		// 		"li:eq(3)" 作用：用来获取所有li元素中索引号为：3的元素
+		// 		:odd 奇数行选择器
+		// 				"li:odd"  作用：用来获取所有li元素中索引号为 奇数的li元素
+		// 		:even 偶数行选择器
+		// 				"li:even"
+		// 
+		// 6 筛选方法
+		// 		.children() / .find(选择器) / 
+		// 		.siblings("li") 用来获取兄弟元素
+		// 
+		// 7 index()方法
+		// 		语法：$("#d").index();
+		// 		$(this).index();
+		// 		$("li").index();
+		// 		
+		// 		作用：获取指定的jQuery对象相对于其兄弟元素索引号（从0开始计算）
+		console.log( $("#s").index() );
+	</script>
+</body>
+</html>

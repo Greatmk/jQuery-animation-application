@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+    }
+    
+    th,
+    td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+    }
+    
+    th {
+        background-color: #09c;
+        font: bold 16px "微软雅黑";
+        color: #fff;
+    }
+    
+    td {
+        font: 14px "微软雅黑";
+    }
+    
+    tbody tr {
+        background-color: #f0f0f0;
+    }
+    
+    tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+    }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    // 模拟从后台拿到的数据
+    var data = [{
+        name: "传智播客",
+        url: "http://www.itcast.cn",
+        type: "IT最强培训机构"
+    }, {
+        name: "黑马程序员",
+        url: "http://www.itheima.com",
+        type: "大学生IT培训机构"
+    }, {
+        name: "传智前端学院",
+        url: "http://web.itcast.cn",
+        type: "前端的黄埔军校"
+    }];
+
+    // 思路：
+    // 1 解析获取的JSON格式的数据
+    // 2 根据数据拼接出html结构字符串
+    // 3 将html字符串放到 tbody 中去
+
+   /* <tr>
+        <td>xxxxx</td>
+        <td>xxxxx</td>
+        <td>xxxxx</td>
+    </tr>*/
+
+    $(function() {
+
+        $("#j_btnGetData").click(function() {
+            // 用来接受所有的html字符串
+            var retString = "";
+
+            for(var i = 0; i < data.length; i++) {
+                // 可以使用 拼接字符串 的形式来拼接html结构
+                // 还可以使用数组的方式
+                //      .push()
+                //      .join("")
+                retString += "<tr>";
+                retString += "<td>" + data[i].name + "</td>";
+                retString += "<td>" + data[i].url + "</td>";
+                retString += "<td>" + data[i].type + "</td>";
+                retString += "</tr>";
+            }
+
+            // html() 这个方法会根据传入的html字符串创建出DOM对象
+            $("#j_tbData").html(retString);
+        });
+    });
+    
+
+    
+    </script>
+</head>
+
+<body>
+    <input type="button" value="获取数据" id="j_btnGetData" />
+    <table>
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>地址</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody id="j_tbData">
+            
+        </tbody>
+    </table>
+</body>
+
+</html>

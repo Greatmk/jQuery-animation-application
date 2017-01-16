@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式操作 - css方法</title>
+	<style type="text/css">
+		/* li {
+			font-size: 40px;
+		} */
+
+		#wz {
+			font-size: 40px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// css 方法
+		// 
+		// 作用：可以用来设置或者是获取指定的jQuery对象的样式属性
+		// 如果是传入了两个参数：表示设置样式
+		// 如果是传入了一个参数：表示获取
+		// 注意：获取样式的时候，不管是行内样式还是通过css来设置的样式都能够获取到
+		// 		 设置样式，是设置的行内样式
+		
+		$(function() {
+			// 设置样式：每次都是设置一个样式
+			/*$("li").css("font-size", 30);
+			$("li:eq(0)").css("background", "hotpink");
+
+			// $("#wz").css("color", "yellow");
+			// $("#wz").css("background", "yellowgreen");
+			// $("#wz").css("height", "50px");
+
+			// 设置样式：一次设置多个样式
+			// 对象的属性可以带有引号，也可以没有
+			// 要么就都带有引号，要么就都不带引号
+			$("#wz").css({
+				"color": "yellow",
+				"background": "yellowgreen",
+				"height": "100px"
+			});*/
+
+			// 获取样式: 只需要传入一个参数即可
+			// 注意：如果获取元素的时候，有多个元素，只会获取第一个元素的样式
+			var fz = $("li").css("font-size");
+			console.log(fz);
+		});
+
+		// jQuery中的DOM操作的特点：
+		// 获取操作：一般只会把第一个元素的相应的属性获取到，如果没有，也会把当前属性的
+		// 			默认值取出！
+		// 设置操作：会设置获取到的所有元素
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>衬衣</li>
+		<li>裤子</li>
+		<li id="wz">袜子</li>
+		<li>鞋子</li>
+	</ul>
+</body>
+</html>

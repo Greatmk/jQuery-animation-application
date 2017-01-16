@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 300px;
+			width: 300px;
+			background-color: hotpink;
+			/*display: none;*/
+			position: relative;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("button:eq(0)").click(function() {
+				// 自定义动画
+				// 第一个参数表示：要执行动画的样式属性
+				// 第二个参数表示：执行动画的时长
+				// 第三个参数表示：动画执行完成之后立即执行的回调函数
+				// .animate({})
+				
+				/*$('div').animate({
+					// width: "10px",
+					// height: 50,
+					left: 400,
+					// fontSize: 40
+				}, 4000,function() {
+					// alert("走你！");
+				});*/
+
+
+				// 了解
+				// animate(执行动画的属性, 动画时长, 动画效果(默认值：swing), 回调函数)
+				$('#d1').animate({
+					// width: "10px",
+					// height: 50,
+					left: 400,
+					// fontSize: 40
+				}, 4000, "linear",function() {
+					// alert("走你！");
+				});
+
+				$('#d2').animate({
+					// width: "10px",
+					// height: 50,
+					left: 400,
+					// fontSize: 40
+				}, 4000,function() {
+					// alert("走你！");
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<button>自定义动画</button>
+	
+	<div id="d1">划船不用桨，全靠浪</div>
+	<div id="d2">划船不用桨，全靠浪</div>
+</body>
+</html>

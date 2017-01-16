@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 300px;
+			width: 300px;
+			background-color: hotpink;
+			display: none;
+		}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 给展示按钮绑定单击事件
+			$("button:eq(0)").click(function() {
+				// 滑入
+				$('div').slideDown(1000, function() {
+					alert("浪");
+				});
+			});
+
+			// 给展示按钮绑定单击事件
+			$("button:eq(1)").click(function() {
+				// 滑出
+				$('div').slideUp();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>滑入</button>
+	<button>滑出</button>
+	
+	<div>划船不用桨，全靠浪</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 追加元素
+			// .append()
+			// 语法：$dv.append( $span );
+			// 作用：将span元素($span)追加到div($dv)元素中
+			// 会将 $span 追加到 $dv的最后一个子节点的后面
+			// 注意：会将页面中的元素先移除调用，然后在追加到新的位置去
+			
+			// .append()方法有三种参数：
+			// 1 jQuery对象
+			// 2 DOM对象
+			// 3 html格式的字符串
+
+			// var $span = $("span");
+			// 1 这种调用方式 append()方法的参数是：jQuery对象
+			// $("div").append( $span );
+			
+			// 2 .append() 的参数是：DOM对象
+			// var span1 = document.getElementsByTagName('span')[0];
+			// $("div").append(span1);
+
+			// 3 .append() 的参数是：html格式的字符串
+			// 		会在方法的内部去创建标签，然后在追加到指定的元素中去
+			// $("div").append("<p>这是p</p>");
+
+			// $() 函数也可以接受 html格式的字符串，也会帮我们创建出元素
+			// $p1 也是一个jQuery对象
+			var $p1 = $("<p>这是通过$函数创建的p元素</p>");
+
+			$("div").append($p1);
+		});
+	</script>
+</head>
+<body>
+	<button>追加元素</button>
+	<span>这是一个span元素哦</span>
+	<div>
+		<h1>这是一个很大的标题</h1>
+		呵呵呵
+	</div>
+</body>
+</html>

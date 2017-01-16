@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			height: 300px;
+			width: 300px;
+			background-color: hotpink;
+			display: none;
+		}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 给展示按钮绑定单击事件
+			$("button:eq(0)").click(function() {
+				// 淡入
+				// fadeIn() 不传入参数也是有动画效果的！
+				// 不传入参数表示：默认值为："normal"，400ms
+				// $("div").fadeIn();
+				// $("div").fadeIn("fast");
+				// $("div").fadeIn(3000);
+				$("div").fadeIn(2000, function() {
+					// $(this).hide(1000);
+				});
+			});
+
+			// 给展示按钮绑定单击事件
+			$("button:eq(1)").click(function() {
+				// 淡出
+				$('div').fadeOut();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>淡入</button>
+	<button>淡出</button>
+	
+	<div></div>
+</body>
+</html>

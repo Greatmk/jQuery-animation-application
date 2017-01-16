@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// next 作用：用来获取指定元素后面紧挨着的一个元素
+			// 如果参数没有传入，不管后面是什么元素都会被获取到
+			// 如果传入了参数，如果参数能够匹配到下一个元素，就会被获取到
+			// 				但是如果参数无法匹配下一个元素，就返回一个空的jQuery对象
+			// 				这个空的jQuery对象也可以使用jQuery中的方法，不会报错！
+
+			var $d = $("#dv").next("div");
+			$d.css("background", "red");
+		});
+	</script>
+</head>
+<body>
+	<div id="dv">divdivdivdivdiv</div>
+	<p>ajslfdalkdsjfl</p>
+	<div>这是id为dv的元素后面的div元素</div>
+</body>
+</html>
